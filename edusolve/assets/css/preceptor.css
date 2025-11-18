@@ -1,0 +1,630 @@
+/* assets/css/preceptor.css */
+
+/* Panel de Preceptor */
+
+.preceptor-panel {
+    padding: 2rem 0 3rem;
+    min-height: calc(100vh - 80px);
+}
+
+.preceptor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.preceptor-title {
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+
+.welcome-message {
+    color: var(--gray);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.current-user {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-left: 4px solid white;
+}
+
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.stat-card h3 {
+    font-size: 0.95rem;
+    color: var(--gray);
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stat-number {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+/* Quick Actions */
+.quick-actions {
+    margin-bottom: 3rem;
+}
+
+.quick-actions h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.action-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    /* background: linear-gradient(135deg, var(--primary), var(--secondary)); */
+    color: grey;
+}
+
+.action-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.action-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Tablas de preceptor */
+.preceptor-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 1.5rem 0;
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background: white;
+}
+
+.preceptor-table th {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: 1.25rem;
+    text-align: left;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+}
+
+.preceptor-table td {
+    padding: 1.25rem;
+    border-bottom: 1px solid var(--light-gray);
+    transition: var(--transition);
+}
+
+.preceptor-table tr:last-child td {
+    border-bottom: none;
+}
+
+.preceptor-table tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.preceptor-table tr:hover td {
+    background-color: #f1f5f9;
+}
+
+/* Formularios de preceptor */
+.preceptor-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.75rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.875rem;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--border-radius);
+    font-family: 'Inter', sans-serif;
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--light-gray);
+    color: var(--dark);
+}
+
+.btn-secondary:hover {
+    background: #dee2e6;
+}
+
+/* Alertas */
+.alert {
+    padding: 1.25rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-left: 4px solid #28a745;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-left: 4px solid #dc3545;
+}
+
+/* Recent Activity */
+.recent-activity h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+
+
+/* Empty state for table */
+.empty-state {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gray);
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--light-gray);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .preceptor-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .preceptor-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .stats-grid,
+    .actions-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .preceptor-title {
+        font-size: 1.75rem;
+    }
+    
+    .preceptor-form {
+        padding: 1.5rem;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
+
+
+/* Tabla de estudiantes moderna */
+.preceptor-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    background: white;
+    margin-top: 1.5rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.preceptor-table thead {
+    background: #2c3e50;;
+    color: white;
+}
+
+.preceptor-table th, .preceptor-table td {
+    padding: 1rem 1.25rem;
+    text-align: left;
+}
+
+.preceptor-table tbody tr {
+    border-bottom: 1px solid #e2e8f0;
+    transition: background 0.2s;
+}
+
+.preceptor-table tbody tr:hover {
+    background: #f1f5f9;
+}
+
+.preceptor-table tbody td {
+    color: #334155;
+}
+
+.button-small {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-right: 0.25rem;
+}
+
+.button-danger {
+    background: #ef4444;
+    color: white;
+}
+
+.button-danger:hover {
+    background: #dc2626;
+}
+
+.search-box {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.search-box input[type="text"] {
+    flex: 1;
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+}
+
+.search-box button, .search-box a {
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.button-primary {
+    background: #2c3e50;;
+    color: white;
+}
+
+.button-primary:hover {
+    background: #2c3e50;;
+}
+
+.button-secondary {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.button-secondary:hover {
+    background: #cbd5e1;
+}
+
+.preceptor-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    max-width: 700px;
+    margin: 2rem auto;
+    font-family: 'Inter', sans-serif;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #334155;
+    box-shadow: 0 0 0 3px rgba(67,97,238,0.15);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.button-primary {
+    background: #334155;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.button-primary:hover {
+    background: #334155;
+}
+
+.button-secondary {
+    background: #e2e8f0;
+    color: #334155;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.button-secondary:hover {
+    background: #cbd5e1;
+}
+
+
+/* Formulario de asignación de profesores */
+.preceptor-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    max-width: 700px;
+    margin: 2rem auto;
+    font-family: 'Inter', sans-serif;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #4361EE;
+    box-shadow: 0 0 0 3px rgba(67,97,238,0.15);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.button-primary {
+    background: #334155;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.button-primary:hover {
+    background: #334155;
+}
+
+.button-secondary {
+    background: #e2e8f0;
+    color: #334155;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.button-secondary:hover {
+    background: #cbd5e1;
+}
+
+/* Alerta */
+.alert {
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    background-color: #d1fae5;
+    color: #065f46;
+    border-left: 4px solid #10b981;
+}
+
+
+
+/* Tabla de preceptor */
+.preceptor-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-top: 1.5rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.preceptor-table th, .preceptor-table td {
+    padding: 0.8rem 1rem;
+    text-align: left;
+}
+
+.preceptor-table th {
+    background: 334155;
+    color: white;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+}
+
+.preceptor-table tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.preceptor-table tr:hover {
+    background-color: #e2e8f0;
+}
+
+.button-small {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.button-danger {
+    background: #334155;
+    color: white;
+    border: none;
+}
+
+.button-danger:hover {
+    background: #334155;
+}
+
+.button-primary {
+    background: #334155;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.button-primary:hover {
+    background: #334155;
+}
+

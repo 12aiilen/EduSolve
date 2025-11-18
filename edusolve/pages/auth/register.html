@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - EduSolve</title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="icon" href="../../assets/images/escudo.png" type="image/png">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="logo-container" style="justify-content: center; margin-bottom: 1.5rem;">
+                <img src="../../assets/images/escudo.png" alt="Escudo de la escuela" width="50">
+                <h1 class="logo" style="font-size: 1.8rem;">EduSolve</h1>
+            </div>
+            
+            <h2 class="login-title">Crear Cuenta</h2>
+            
+            <form id="registerForm" class="login-form">
+                <div class="form-group">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" id="name" class="form-control" required placeholder="Ej: Pedro">
+                </div>
+
+                <div class="form-group">
+                    <label for="last-name" class="form-label">Apellido</label>
+                    <input type="text" id="last-name" class="form-control" required placeholder="Ej: Pascal">
+                </div>
+                
+                 <div class="form-group">
+                    <label for="cuil" class="form-label">CUIL</label>
+                    <input type="text" id="cuil" class="form-control" required placeholder="Ej: 20-12345678-9">
+                    <small class="form-text">Formato: XX-XXXXXXXX-X</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="birthdate" class="form-label">Fecha de Nacimiento</label>
+                    <input type="date" id="birthdate" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" id="email" class="form-control" required placeholder="tu@email.com">
+                </div>
+      
+                <div class="form-group">
+                    <label for="reg-username" class="form-label">Usuario</label>
+                    <input type="text" id="reg-username" class="form-control" required placeholder="Crea un nombre de usuario">
+                </div>
+                
+                <div class="form-group">
+                    <label for="reg-password" class="form-label">Contraseña</label>
+                    <input type="password" id="reg-password" class="form-control" required placeholder="Mínimo 8 caracteres">
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm-password" class="form-label">Confirmar Contraseña</label>
+                    <input type="password" id="confirm-password" class="form-control" required placeholder="Vuelve a escribir tu contraseña">
+                </div>
+                
+                <div class="form-group">
+                    <label for="user-type" class="form-label">Tipo de Usuario</label>
+                    <select id="user-type" class="form-control" required>
+                        <option value="">Seleccione...</option>
+                        <option value="student">Estudiante</option>
+                        <option value="teacher">Profesor</option>
+                    </select>
+                </div>
+                
+                <!-- Campo de código de año (solo visible cuando se selecciona "Estudiante") -->
+                <div class="form-group" id="year-code-group" style="display: none;">
+                    <label for="year-code" class="form-label">Código de Año</label>
+                    <input type="text" id="year-code" class="form-control" placeholder="Ingrese el código correspondiente a su año">
+                    <small class="form-text">Cada año tiene un código único. Consulte con su institución.</small>
+                </div>
+                
+                <!-- Campo de código de profesor (solo visible cuando se selecciona "Profesor") -->
+                <div class="form-group" id="teacher-code-group" style="display: none;">
+                    <label for="teacher-code" class="form-label">Código de Profesor</label>
+                    <input type="password" id="teacher-code" class="form-control" placeholder="Ingrese el código de profesor">
+                    <small class="form-text">Solo los profesores autorizados tienen este código.</small>
+                </div>
+                
+                <div class="form-group" style="margin-top: 1.5rem;">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms" style="display: inline; margin-left: 0.5rem;">
+                        Acepto los <a href="../general/terms.html" target="_blank">términos y condiciones</a>
+                    </label>
+                </div>
+                
+                <button type="submit" class="login-button">Registrarse</button>
+                
+                <div id="registerError" class="login-error" style="display: none;"></div>
+            </form>
+            
+            <div class="login-links">
+                ¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/login.js"></script>
+    <script>
+        // Códigos por año (1° al 7°)
+        const yearCodes = {
+            "1": "EDU-ESTUDIANTE-1A",
+            "2": "EDU-ESTUDIANTE-2B", 
+            "3": "EDU-ESTUDIANTE-3C",
+            "4": "EDU-ESTUDIANTE-4D",
+            "5": "EDU-ESTUDIANTE-5E",
+            "6": "EDU-ESTUDIANTE-6F",
+            "7": "EDU-ESTUDIANTE-7G"
+        };
+
+        // Mostrar/ocultar campos según el tipo de usuario seleccionado
+        document.getElementById('user-type').addEventListener('change', function() {
+            const teacherCodeGroup = document.getElementById('teacher-code-group');
+            const yearCodeGroup = document.getElementById('year-code-group');
+            
+            if (this.value === 'teacher') {
+                teacherCodeGroup.style.display = 'block';
+                document.getElementById('teacher-code').required = true;
+                yearCodeGroup.style.display = 'none';
+                document.getElementById('year-code').required = false;
+            } else if (this.value === 'student') {
+                teacherCodeGroup.style.display = 'none';
+                document.getElementById('teacher-code').required = false;
+                yearCodeGroup.style.display = 'block';
+                document.getElementById('year-code').required = true;
+            } else {
+                teacherCodeGroup.style.display = 'none';
+                document.getElementById('teacher-code').required = false;
+                yearCodeGroup.style.display = 'none';
+                document.getElementById('year-code').required = false;
+            }
+        });
+
+        // Validar formulario antes de enviar
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            const userType = document.getElementById('user-type').value;
+            const teacherCode = document.getElementById('teacher-code').value;
+            const yearCode = document.getElementById('year-code').value;
+            
+            // Validar código de profesor
+            if (userType === 'teacher') {
+                if (teacherCode !== 'T3ACH-7X9L') {
+                    e.preventDefault();
+                    document.getElementById('registerError').textContent = 'Código de profesor incorrecto.';
+                    document.getElementById('registerError').style.display = 'block';
+                    return;
+                }
+            }
+            
+            // Validar código de año para estudiantes
+            if (userType === 'student') {
+                let validYearCode = false;
+                
+                // Verificar si el código coincide con alguno de los códigos de año
+                for (const code of Object.values(yearCodes)) {
+                    if (yearCode === code) {
+                        validYearCode = true;
+                        break;
+                    }
+                }
+                
+                if (!validYearCode) {
+                    e.preventDefault();
+                    document.getElementById('registerError').textContent = 'Código de año incorrecto. Por favor, ingrese un código válido para su año.';
+                    document.getElementById('registerError').style.display = 'block';
+                    return;
+                }
+            }
+            
+            // Validar formato de CUIL
+            const cuil = document.getElementById('cuil').value;
+            const cuilPattern = /^\d{2}-\d{8}-\d{1}$/;
+            if (!cuilPattern.test(cuil)) {
+                e.preventDefault();
+                document.getElementById('registerError').textContent = 'Formato de CUIL inválido. Use el formato: XX-XXXXXXXX-X';
+                document.getElementById('registerError').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
